@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | DayFlow</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background-color: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul a:hover, nav ul a.active {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-right: 4px solid var(--accent);
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Ben</div>
+        <ul>
+            <li><a href="portfolio.html">Planner</a></li>
+            <li><a href="about us.html" class="active">About Us</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Our Story</h1>
+        <p>DayFlow was built out of a simple necessity: navigating the noise of a busy daily schedule without feeling overwhelmed by heavy, cluttered productivity applications.</p>
+
+        <div class="about-grid">
+            <div>
+                <h2>The Mission</h2>
+                <p>We believe structure shouldn't feel rigid. Our mission is to offer an instant, friction-free scheduling canvas that gets out of your way. Simply type your agenda, pick a time, and live your day with complete peace of mind.</p>
+                
+                <h2>Why Choose DayFlow?</h2>
+                <ul class="features-list">
+                    <li>Chronological auto-sorting structure.</li>
+                    <li>Zero background sync slowdowns.</li>
+                    <li>Audio reminders triggered directly in your browser.</li>
+                    <li>Completely private—your details stay on your device.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h2>Designed for Focus</h2>
+                <p>We optimized this tool specifically for students, creators, and professionals who need an operational checklist for today—not a overwhelming multi-year project management scheme.</p>
+                <p style="margin-bottom: 0; font-style: italic;">"Simplicity is the ultimate sophistication."</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
