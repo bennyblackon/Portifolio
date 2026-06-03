@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DayFlow</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background-color: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul a:hover, nav ul a.active {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: #334155;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent);
+        }
+
+        button {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: var(--accent-hover);
+        }
+
+        .success-msg {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Ben</div>
+        <ul>
+            <li><a href="portfolio.html">Planner</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="contact us.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p class="subtitle">Have suggestions or encountered a bug? Drop us a message below.</p>
+
+        <div class="contact-card">
+            <div class="success-msg" id="success-banner">
+                Message sent successfully! We will get back to you shortly.
+            </div>
+
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="Benjamin">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Ben@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show successful submit animation feedback
+            document.getElementById('success-banner').style.display = 'block';
+            this.reset();
+            
+            // Hide the banner automatically after 4 seconds
+            setTimeout(() => {
+                document.getElementById('success-banner').style.display = 'none';
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
